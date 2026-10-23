@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gemini AI Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="logo">✦</div>
+      <h1>Gemini AI Assistant</h1>
+      <p>Trợ lý AI thông minh · Văn bản và hình ảnh</p>
+    </header>
+
+    <section class="panel">
+      <label for="prompt">Câu hỏi của bạn</label>
+      <textarea id="prompt" rows="4"
+        placeholder="Nhập câu hỏi hoặc yêu cầu mô tả hình ảnh..."></textarea>
+
+      <label for="image">Chọn hình ảnh (không bắt buộc)</label>
+      <input id="image" type="file"
+        accept="image/png,image/jpeg,image/webp">
+      <div id="preview"></div>
+
+      <div class="settings">
+        <div>
+          <label for="temperature">
+            Temperature: <span id="tempValue">0.7</span>
+          </label>
+          <input id="temperature" type="range"
+            min="0" max="2" step="0.1" value="0.7">
+        </div>
+        <div>
+          <label for="topP">
+            Top-P: <span id="topPValue">0.9</span>
+          </label>
+          <input id="topP" type="range"
+            min="0.1" max="1" step="0.05" value="0.9">
+        </div>
+      </div>
+
+      <button id="sendBtn">✦ Gửi câu hỏi</button>
+      <p class="hint">Hãy nhập câu hỏi hoặc chọn ảnh để bắt đầu.</p>
+    </section>
+
+    <section class="panel">
+      <div class="result-heading">
+        <h2>Kết quả trả lời</h2>
+        <button id="exportBtn" class="secondary" disabled>
+          Tải báo cáo TXT
+        </button>
+      </div>
+      <p id="status" role="status"></p>
+      <article id="answer">Câu trả lời sẽ xuất hiện ở đây.</article>
+    </section>
+  </main>
+  <script src="/static/script.js"></script>
+</body>
+</html>
